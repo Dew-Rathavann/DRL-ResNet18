@@ -77,7 +77,7 @@ class WasteClassifierApp(QWidget):
 
     def load_model(self):
         model = WasteClassifier(num_classes=4)
-        checkpoint = torch.load("D:/Work/WasteApp/best_model_weights.pth", map_location=torch.device('cpu'))
+        checkpoint = torch.load("best_model_weights.pth", map_location=torch.device('cpu'))
         state_dict = checkpoint.get("resnet", checkpoint)
         model.load_state_dict(state_dict)
         model.eval()
